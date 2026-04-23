@@ -1,0 +1,18 @@
+--data_path F:\preprocessed_cityscapes
+--log_dir D:\Root\fkkk_project\tmp\lr_res_cs
+--dataset cityscapes_preprocessed 
+--split cityscapes_preprocessed 
+--eval_split cityscapes 
+--height 192 
+--width 512
+--batch_size 16
+--num_epochs 40
+--model_dim 56
+--patch_size 16
+--query_nums 96
+--pretrained_pose
+--pose_net_path D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
+--min_depth 0.001
+--max_depth 10.0
+--dim_out 128
+--backbone resnet_lite

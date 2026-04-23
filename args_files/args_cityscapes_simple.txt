@@ -1,0 +1,19 @@
+--backbone resnet_lite
+--load_pretrained_model
+--load_pt_folder D:\Root\fkkk_project\tmp\lr_res_cs\mdp\models\weights_1
+--image_path F:\fk_cityscapes_input2\fk_cityscapes_input2
+--height 192
+--width 512
+--batch_size 16
+--num_epochs 40
+--model_dim 56
+--patch_size 16
+--query_nums 96
+--dim_out 128
+--min_depth 0.01
+--max_depth 80.0
+--pretrained_pose
+--ext png
+
+
+

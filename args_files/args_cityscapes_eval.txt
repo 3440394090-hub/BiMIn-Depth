@@ -1,0 +1,17 @@
+--eval_data_path D:\data\leftImg8bit_sequence_trainvaltest
+--dataset cityscapes_preprocessed 
+--split cityscapes_preprocessed 
+--eval_split cityscapes 
+--height 192 
+--width 512
+--model_dim 56
+--patch_size 16
+--query_nums 96
+--min_depth 0.001
+--max_depth 80.0
+--dim_out 128
+--eval_mono
+--load_weights_folder D:\Root\fkkk_project\tmp\lr_res_cs\mdp\models\weights_1
+--backbone resnet_lite
+--num_features 512
+

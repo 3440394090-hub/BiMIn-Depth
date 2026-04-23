@@ -1,0 +1,40 @@
+ninja_required_version = 1.3
+cxx = cl
+nvcc = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc
+
+cflags = /nologo /O2 /W3 /GL /DNDEBUG /MD /MD /wd4819 /wd4251 /wd4244 /wd4267 /wd4275 /wd4018 /wd4190 /wd4624 /wd4067 /wd4068 /EHsc -IC:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\TH -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -IC:\Users\gw\.conda\envs\fkvmanba\include -IC:\Users\gw\.conda\envs\fkvmanba\Include "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include"
+post_cflags = -O3 -std=c++17 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=selective_scan_cuda -D_GLIBCXX_USE_CXX11_ABI=0 /std:c++17
+cuda_cflags = -std=c++17 --use-local-env -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -IC:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\TH -IC:\Users\gw\.conda\envs\fkvmanba\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -IC:\Users\gw\.conda\envs\fkvmanba\include -IC:\Users\gw\.conda\envs\fkvmanba\Include "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\ATLMFC\include" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" "-IC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include"
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ -U__CUDA_NO_BFLOAT16_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ -U__CUDA_NO_BFLOAT162_OPERATORS__ -U__CUDA_NO_BFLOAT162_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math --ptxas-options=-v -lineinfo -gencode arch=compute_53,code=sm_53 -gencode arch=compute_62,code=sm_62 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_72,code=sm_72 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_87,code=sm_87 -gencode arch=compute_90,code=sm_90 --threads 4 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=selective_scan_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = cl /showIncludes $cflags -c $in /Fo$out $post_cflags
+  deps = msvc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc --generate-dependencies-with-compile --dependency-output $out.d $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan.obj: compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan.cpp
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_bf16_complex.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_bf16_complex.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_bf16_real.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_bf16_real.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_fp16_complex.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_fp16_complex.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_fp16_real.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_fp16_real.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_fp32_complex.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_fp32_complex.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_bwd_fp32_real.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_bwd_fp32_real.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_fwd_bf16.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_fwd_bf16.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_fwd_fp16.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_fwd_fp16.cu
+build C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\build\temp.win-amd64-3.10\Release\csrc/selective_scan/selective_scan_fwd_fp32.obj: cuda_compile C$:\fkkk_project\SfMNeXt-Impl-manba\mamba\csrc\selective_scan\selective_scan_fwd_fp32.cu
+
+
+
+
+
+

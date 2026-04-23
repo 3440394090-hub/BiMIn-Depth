@@ -1,0 +1,18 @@
+--data_path C:\fk\raw_KITTI\Raw_data
+--dataset kitti
+--eval_split eigen
+--height 192 
+--width 640
+--batch_size 5
+--model_dim 64
+--patch_size 16
+--query_nums 120
+--eval_mono
+--load_weights_folder C:\Users\gw\tmp\mdp\models\weights_0
+--post_process
+--min_depth 0.01
+--max_depth 80.0
+--save_pred_disps
+
+
+

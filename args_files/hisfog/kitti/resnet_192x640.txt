@@ -1,0 +1,26 @@
+--data_path F:\raw_KITTI\Raw_data
+--log_dir D:\Root\fkkk_project\tmp\lr_res_kitti
+--model_name res_088
+--dataset kitti 
+--eval_split eigen
+--backbone resnet_lite
+--height 192 
+--width 640
+--batch_size 12
+--num_epochs 25
+--scheduler_step_size 15
+--num_layers 50
+--num_features 256
+--model_dim 32
+--patch_size 16
+--dim_out 64
+--query_nums 120
+--min_depth 0.001
+--max_depth 80.0
+--pretrained_pose
+--pose_net_path D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
+
+--load_weights_folder D:\Root\fkkk_project\tmp\BiMIn_kitti640\BiMIn-Depth\models\weights_36
+--eval_mono
+--post_process
+

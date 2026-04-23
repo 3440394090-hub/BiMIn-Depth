@@ -1,0 +1,25 @@
+--data_path F:\raw_KITTI\Raw_data
+--log_dir D:\Root\fkkk_project\tmp\lr_res_kitti
+--model_name resnet_320x1024
+--dataset kitti 
+--eval_split eigen
+--backbone resnet_lite
+--height 320 
+--width 1024
+--batch_size 12
+--num_epochs 50
+--scheduler_step_size 15
+--model_dim 32
+--patch_size 20
+--dim_out 128
+--query_nums 200
+--num_features 256
+--num_layers 50
+--min_depth 0.01
+--max_depth 80.0
+--pretrained_pose
+--pose_net_path D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
+
+--load_weights_folder D:\Root\fkkk_project\tmp\lr_res_kitti\resnet_320x1024\models\weights_40
+--eval_mono
+--post_process
