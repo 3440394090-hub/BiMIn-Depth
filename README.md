@@ -11,22 +11,15 @@ python train.py ./args_files/hisfog/kitti/resnet_192x640_train.txt
 ```
 For instructions on downloading the KITTI dataset, see [Monodepth2](https://github.com/nianticlabs/monodepth2)
 
-To finetune on KITTI, run:
 
-```bash
-python ./finetune/train_ft_SQLdepth.py ./conf/cvnXt.txt ./finetune/txt_args/train/inc_kitti.txt
 ```
 
 To train on CityScapes, run:
 
 ```bash
-python train.py ./args_files/args_cityscapes_train.txt
+python train.py ./args_files/hisfog/cityscapes/args_cityscapes_finetune.txt
 ```
-To finetune on CityScapes, run:
 
-```bash
-python train.py ./args_files/args_cityscapes_finetune.txt
-```
 
 For preparing cityscapes dataset, please refer to SfMLearner's [prepare_train_data.py](https://github.com/tinghuiz/SfMLearner/blob/master/data/prepare_train_data.py) script.
 We used the following command:
