@@ -1,6 +1,6 @@
 --data_path F:\raw_KITTI\Raw_data
 --log_dir D:\Root\fkkk_project\tmp\lr_res_kitti
---model_name BiMIn-Depth1
+--model_name BiMIn-Depth-raw
 --dataset kitti 
 --eval_split eigen
 --backbone resnet_lite
@@ -22,4 +22,4 @@
 --pretrained_pose
 --pose_net_path D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
 --load_weights_folder D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
---use_stereo
+--damp 0.15

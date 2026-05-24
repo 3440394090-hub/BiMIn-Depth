@@ -20,7 +20,7 @@
 --pretrained_pose
 --pose_net_path D:\Root\fkkk_project\model\sqldepth\KITTI_192x640_models
 
---load_weights_folder D:\Root\fkkk_project\tmp\BiMIn_kitti640\BiMIn-Depth\models\weights_36
+--load_weights_folder D:\Root\fkkk_project\tmp\BiMIn_kitti640\BiMIn-Depth\models\weights_13
 --eval_mono
 --post_process
 

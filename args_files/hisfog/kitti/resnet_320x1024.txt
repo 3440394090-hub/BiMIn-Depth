@@ -1,6 +1,6 @@
 --data_path F:\raw_KITTI\Raw_data
 --log_dir D:\Root\fkkk_project\tmp\lr_res_kitti
---model_name resnet_320x1024
+--model_name BiMIn-Depth320x1024
 --dataset kitti 
 --eval_split eigen
 --backbone resnet_lite
@@ -24,3 +24,4 @@
 --eval_mono
 --post_process
 --use_stereo
+--damp 0.2
