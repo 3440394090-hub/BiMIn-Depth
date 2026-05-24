@@ -59,23 +59,14 @@ python ./tools/evaluate_depth_cityscapes_config.py args_files/args_cvnXt_H_citys
 The ground truth depth files can be found at [HERE](https://storage.googleapis.com/niantic-lon-static/research/manydepth/gt_depths_cityscapes.zip),
 Download this and unzip into `splits/cityscapes`.
 
-## Inference with your own images
-```bash
-python test_simple_SQL_config.py ./conf/cvnXt.txt
-```
-In `./conf/cvnXt.txt`, you can set `--image_path` to a single image or a directory of images.
 
-## Citation
-If you find this project useful for your research, please consider citing:
-~~~
-@InProceedings{Lavreniuk_2025_CVPR,
-    author    = {Lavreniuk, Mykola and Lavreniuk, Alla},
-    title     = {SPIdepth: Strengthened Pose Information for Self-supervised Monocular Depth Estimation},
-    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops},
-    month     = {June},
-    year      = {2025},
-    pages     = {874-884}
-}
+**Custom dataset**
+
+You can train on a custom monocular or stereo dataset by writing a new dataloader class which inherits from `MonoDataset` – see the `KITTIDataset` class in `datasets/kitti_dataset.py` for an example.
+
+## Contact us 
+
+If you have any questions, please feel free to contact us: 2222408078@stmail.ujs.edu.cn
 ~~~
 ## Acknowledgement
 This project is built upon [SQLdepth](https://github.com/hisfog/SfMNeXt-Impl) and [SPIdepth](https://github.com/Lavreniuk/SPIdepth), adopting their settings. and we are grateful for their outstanding contributions.
