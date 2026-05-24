@@ -39,7 +39,9 @@ python prepare_train_data.py \
 
 You can download weights for some pretrained models here:
 
-* [KITTI](https://huggingface.co/MykolaL/SPIdepth/tree/main/kitti)
+* [KITTI](通过网盘分享的文件：1024
+链接: https://pan.baidu.com/s/1Luud_00-ukRgtq1Zc_Av9w 提取码: 8888 
+--来自百度网盘超级会员v5的分享)
 * [CityScapes](https://huggingface.co/MykolaL/SPIdepth/tree/main/cityscapes)
 
 To evaluate a model on KITTI, run:
