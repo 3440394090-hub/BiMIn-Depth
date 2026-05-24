@@ -93,4 +93,4 @@ If you find this project useful for your research, please consider citing:
 }
 ~~~
 ## Acknowledgement
-This project is built on top of [SQLdepth](https://github.com/hisfog/SfMNeXt-Impl), and we are grateful for their outstanding contributions.
+This project is built upon [SQLdepth](https://github.com/hisfog/SfMNeXt-Impl) and [SPIdepth](https://github.com/Lavreniuk/SPIdepth), adopting their settings. and we are grateful for their outstanding contributions.
