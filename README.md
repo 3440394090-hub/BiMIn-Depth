@@ -7,7 +7,7 @@
 To train on KITTI, run:
 
 ```bash
-python train.py ./args_files/hisfog/kitti/cvnXt_H_320x1024.txt
+python train.py ./args_files/hisfog/kitti/resnet_192x640_train.txt
 ```
 For instructions on downloading the KITTI dataset, see [Monodepth2](https://github.com/nianticlabs/monodepth2)
 
