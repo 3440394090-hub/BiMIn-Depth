@@ -45,7 +45,7 @@ You can download weights for some pretrained models here:
 To evaluate a model on KITTI, run:
 
 ```bash
-python evaluate_depth_config.py args_files/hisfog/kitti/cvnXt_H_320x1024.txt
+python evaluate_depth_config.py args_files/hisfog/kitti/resnet_192x640.txt
 ```
 
 Make sure you have first run `export_gt_depth.py` to extract ground truth files.
@@ -53,7 +53,7 @@ Make sure you have first run `export_gt_depth.py` to extract ground truth files.
 And to evaluate a model on Cityscapes, run:
 
 ```bash
-python ./tools/evaluate_depth_cityscapes_config.py args_files/args_cvnXt_H_cityscapes_finetune_eval.txt
+python args_files/hisfog/cityscapes/args_res50_cityscapes_finetune_192x640_eval.txt
 ```
 
 The ground truth depth files can be found at [HERE](https://storage.googleapis.com/niantic-lon-static/research/manydepth/gt_depths_cityscapes.zip),
