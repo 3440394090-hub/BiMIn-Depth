@@ -12,7 +12,7 @@ python train.py ./args_files/hisfog/kitti/resnet_192x640_train.txt
 For instructions on downloading the KITTI dataset, see [Monodepth2](https://github.com/nianticlabs/monodepth2)
 
 
-```
+
 
 To train on CityScapes, run:
 
