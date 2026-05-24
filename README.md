@@ -67,6 +67,7 @@ You can train on a custom monocular or stereo dataset by writing a new dataloade
 ## Contact us 
 
 If you have any questions, please feel free to contact us: 2222408078@stmail.ujs.edu.cn
-~~~
+
+
 ## Acknowledgement
 This project is built upon [SQLdepth](https://github.com/hisfog/SfMNeXt-Impl) and [SPIdepth](https://github.com/Lavreniuk/SPIdepth), adopting their settings. and we are grateful for their outstanding contributions.
