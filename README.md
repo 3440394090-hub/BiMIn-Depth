@@ -39,8 +39,8 @@ python prepare_train_data.py \
 
 You can download weights for some pretrained models here:
 
-* [KITTI 192*640](https://pan.baidu.com/s/1IS2DSftnyLM0m1pie762ug?pwd=8888)
-* [KITTI 320*1024](https://pan.baidu.com/s/19xSJfU6_G7e0AL7gPSL4tQ?pwd=8888)
+* [KITTI 192*640](https://pan.baidu.com/s/1oLfZTxVh5tuCcC47M9nEjQ?pwd=aynv)
+* [KITTI 320*1024](https://pan.baidu.com/s/1x99h31flcqoFqosjsUViCQ?pwd=p22p)
 
 To evaluate a model on KITTI, run:
 
